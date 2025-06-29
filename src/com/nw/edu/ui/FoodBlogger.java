@@ -577,7 +577,9 @@ public class FoodBlogger extends javax.swing.JFrame {
         if (showDialog == JFileChooser.APPROVE_OPTION) {
             File imageFile = chooseFile.getSelectedFile();
             imgFileName = imageFile.getAbsolutePath();
-            imgLabel.setText(imgFileName);
+//            System.out.println(imgFileName);
+//            imgLabel.setText(imgFileName);
+            imgLabel.setText(imgFileName.substring(imgFileName.lastIndexOf("\\")+1));
 
         }
         displayImage();
@@ -595,7 +597,7 @@ public class FoodBlogger extends javax.swing.JFrame {
         } else {
             int row = chefRecipeTbl.getSelectedRow();
             TableModel model = chefRecipeTbl.getModel();
-            System.out.println(model.getValueAt(row, 0));
+//            System.out.println(model.getValueAt(row, 0));
             chefId = Integer.parseInt(model.getValueAt(row, 0).toString());
             userNameTxt.setText(model.getValueAt(row, 1).toString());
             firstNameTxt.setText(model.getValueAt(row, 2).toString());
@@ -610,8 +612,11 @@ public class FoodBlogger extends javax.swing.JFrame {
             ingredientsTxt.setText(model.getValueAt(row, 11).toString());
             categoryCombo.setSelectedItem(model.getValueAt(row, 12).toString());
             descTxtArea.setText(model.getValueAt(row, 13).toString());
-            imgLabel.setText(model.getValueAt(row, 14).toString());
-            imgFileName = imgLabel.getText();
+            String imageFullPath = model.getValueAt(row, 14).toString();
+//            System.out.println("==="+imageFullPath.substring(imageFullPath.lastIndexOf("\\")+1));
+            imgLabel.setText(imageFullPath.substring(imageFullPath.lastIndexOf("\\")+1));
+            imgFileName = model.getValueAt(row, 14).toString();//imgLabel.getText();
+//            System.out.println(">>>"+imgFileName);
             displayImage();
             String[] options = {"Update", "Delete", "Cancel"};
             var userAction = JOptionPane.showOptionDialog(null,

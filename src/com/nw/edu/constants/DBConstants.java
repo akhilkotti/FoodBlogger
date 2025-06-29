@@ -11,7 +11,7 @@ public class DBConstants {
     public static final String DATABASE_PORT = "3306";
     public static final String DATABASE_URL = "jdbc:mysql://localhost:" + DATABASE_PORT + "/" + DATABASE_NAME;
     public static final String DATABASE_USER = "root";
-    public static final String DATABASE_PASSWORD = "kottiakhil1969$";
+    public static final String DATABASE_PASSWORD = "rishi123";
 
     public static final String CATEGORY_SELECT_QUERY = "select * from category";
     public static final String CHEF_RECIPE_CATEGORY_SELECT_QUERY = "SELECT chef_.id as chef_id, chef_.username,chef_.first_name,chef_.last_name,chef_.email,chef_.phone_number,\r\n"
