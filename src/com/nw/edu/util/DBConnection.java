@@ -52,7 +52,7 @@ public class DBConnection {
             while (rs.next()) {
                 dbLog.logWOD(rs.getString(1) + "-" + rs.getString(2) + "-" + rs.getString(3) + "-" + rs.getString(4)
                         + "-" + rs.getString(5) + "-" + rs.getString(6) + "-" + rs.getInt(7) + "-" + rs.getString(8)
-                        + "-" + rs.getInt(9) + "-" + rs.getInt(10) + "-" + rs.getString(11) + "-" + rs.getString(12));
+                        + "-" + rs.getInt(9) + "-" + rs.getString(10) + "-" + rs.getString(11) + "-" + rs.getString(12));
             }
 
             rs.close();
